@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".reczne"></activity>
+        <activity android:name=".reczne" />
+        <activity android:name=".save_screen"></activity>
     </application>
 
 </manifest>
