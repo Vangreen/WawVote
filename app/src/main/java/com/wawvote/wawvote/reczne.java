@@ -25,23 +25,23 @@ public class reczne extends AppCompatActivity {
     }
 
     public void buttonOnClick(View v){
-        String numer1, numer2, pesel;
+        String numer1_str, numer2_str, pesel_str;
         EditText text = (EditText) findViewById(R.id.numer1);
         EditText text1 = (EditText) findViewById(R.id.numer2);
         EditText text2 = (EditText) findViewById(R.id.pesel);
-        numer1 = text1.getText().toString();
-        pesel = text2.getText().toString();
-        numer2 = text.getText().toString();
+        numer1_str = text1.getText().toString();
+        pesel_str = text2.getText().toString();
+        numer2_str   = text.getText().toString();
         button = (Button) findViewById(R.id.check);
         imageview_numer = (ImageView) findViewById(R.id.check1);
         imageview_pesel = (ImageView) findViewById(R.id.check2);
-        if (pesel.length()==11){
+        if (pesel_str.length()==11){
 
             imageview_pesel.setImageResource(R.drawable.checked);
         }else{
             imageview_pesel.setImageResource(R.drawable.wrong);
         }
-        if (numer1.length()==6 && numer2.length()==3  ){
+        if (numer1_str.length()==6 && numer2_str.length()==3  ){
 
             imageview_numer.setImageResource(R.drawable.checked);
         }else{
