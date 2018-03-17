@@ -41,7 +41,7 @@ public class reczne extends AppCompatActivity {
 
             imageview_pesel.setImageResource(R.drawable.checked);
             try1=1;
-        } else {
+        }else {
             imageview_pesel.setImageResource(R.drawable.wrong);
             try1=0;
         }
@@ -49,7 +49,7 @@ public class reczne extends AppCompatActivity {
 
             imageview_numer.setImageResource(R.drawable.checked);
             try2=1;
-        } else {
+        }else {
             imageview_numer.setImageResource(R.drawable.wrong);
             try2=0;
         }
@@ -58,6 +58,7 @@ public class reczne extends AppCompatActivity {
         TextView text = (TextView) findViewById(R.id.text_blad);
         if (try1==1 && try2==1){
             startActivity(new Intent(getApplicationContext(), save_screen.class));
+            text.setText(" ");
         }else{
             text.setText("Popraw dane");
         }
