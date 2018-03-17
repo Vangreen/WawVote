@@ -18,7 +18,6 @@
         </activity>
         <activity android:name=".reczne" />
         <activity android:name=".save_screen" />
-        <activity android:name=".Camera"></activity>
     </application>
 
 </manifest>

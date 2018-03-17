@@ -1,6 +1,7 @@
 package com.wawvote.wawvote;
 
 import android.content.Intent;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
+    private static final int CAM_REQUEST=1313;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,4 +28,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void buttonOnClick1(View v) {
+
+        //Button button =(Button) v;
+
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, CAM_REQUEST);
+
+    }
 }
