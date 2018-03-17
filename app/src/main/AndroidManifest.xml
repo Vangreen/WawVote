@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".reczne" />
         <activity android:name=".save_screen" />
+        <activity android:name=".kandydaci" />
+        <activity android:name=".info"></activity>
     </application>
 
 </manifest>
