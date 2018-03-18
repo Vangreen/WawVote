@@ -22,5 +22,5 @@
         <activity android:name=".kandydaci" />
         <activity android:name=".info"></activity>
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
