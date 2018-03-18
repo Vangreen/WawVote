@@ -22,7 +22,8 @@
         <activity android:name=".save_screen" />
         <activity android:name=".kandydaci" />
         <activity android:name=".info" />
-        <activity android:name=".end_screen"></activity>
+        <activity android:name=".end_screen" />
+        <activity android:name=".Wyniki"></activity>
     </application>
 
 </manifest>
