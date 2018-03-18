@@ -69,7 +69,7 @@ public class Wyniki extends AppCompatActivity {
                             float aDouble =  Float.parseFloat(map.get(i + "").toString()) ;
                             barEntries.add(new BarEntry(aDouble,i));
                         }
-                        BarDataSet barDataSet = new BarDataSet(barEntries,"Imiona");
+                        BarDataSet barDataSet = new BarDataSet(barEntries,"");
 
                         ArrayList<String> theNames = new ArrayList<>();
                         theNames.add("Paweł Rabiej");
@@ -81,9 +81,8 @@ public class Wyniki extends AppCompatActivity {
 
                         BarData theData = new BarData(theNames, barDataSet);
                         barChart.setData(theData);
-
-
-                        barChart.setEnabled(false);
+                        
+                        barChart.setDescription("");
 
                         //System.out.println(map.toString());
                         View view = findViewById(R.id.wizard);
