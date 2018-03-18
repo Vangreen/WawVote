@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.GridLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,19 +54,20 @@ public class kandydaci extends AppCompatActivity {
 
     private void setSingleEvent(GridLayout mainGrid) {
 
-        for (int i = 0; i < mainGrid.getChildCount(); i++) {
+        for (int i = 0; i < mainGrid.getChildCount() ; i++) {
             CardView cardView = (CardView) mainGrid.getChildAt(i);
             final int finalI = i;
             cardView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+                        @Override
+                        public void onClick(View view) {
+                            CardView cardView = (CardView) view;
+                            LinearLayout linearLayout = (LinearLayout) cardView.getChildAt(0);
+                            TextView textView = (TextView) linearLayout.getChildAt(1);
+                            String nameCandidate = textView.getText().toString();
+                            Intent intent = new Intent(kandydaci.this,info.class);
 
-                    Intent intent = new Intent(kandydaci.this,info.class);
-                    intent.putExtra("info","Kandydat nr " + finalI);
-
-                    //final TextView GetKandydatId = (TextView)
-                    final TextView imie_nazwisko = (TextView)findViewById(R.id.kan1);
-                    intent.putExtra("nazwa","" + imie_nazwisko.getText().toString());
+                    intent.putExtra("candidateName",nameCandidate);
+                    intent.putExtra("imagePath",  finalI+"");
                     startActivity(intent);
 
                 }
