@@ -3,8 +3,8 @@ package com.wawvote.wawvote;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -19,7 +19,6 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
 public class Wyniki extends AppCompatActivity {
@@ -31,6 +30,7 @@ public class Wyniki extends AppCompatActivity {
         setContentView(R.layout.activity_wyniki);
 
         barChart = (BarChart) findViewById(R.id.bargraph);
+        barChart.setNoDataText("Proszę czekać, trwa ładowanie wyników");
         PobierzWyniki pobierzWyniki = new PobierzWyniki();
         Gson gson = new Gson();
         getData();
@@ -81,8 +81,17 @@ public class Wyniki extends AppCompatActivity {
 
                         BarData theData = new BarData(theNames, barDataSet);
                         barChart.setData(theData);
-                        System.out.println(map.toString());
+
+
+                        barChart.setEnabled(false);
+
+                        //System.out.println(map.toString());
+                        View view = findViewById(R.id.wizard);
+                        view.performClick();
                         requestQueue.stop();
+                        //finish();
+                        //startActivity(getIntent());
+
 
                     }
                 }, new Response.ErrorListener() {
