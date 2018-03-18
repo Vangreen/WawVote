@@ -34,6 +34,5 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent, CAM_REQUEST);
-
     }
 }
